@@ -1,0 +1,114 @@
+/*Body*/
+body, html{
+  height: 100%;
+  width: 100%;
+  font-family: Roboto, helvetica;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+/*Navigation Bar*/
+.navbar{
+  padding: 1% 0;
+  font-size: 1.2em;
+}
+
+/*Login Button in the navigation bar*/
+.navbar-default .navbar-nav li a{
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+  padding: 12px 45px;
+  background-color: #FF0000;
+  font-weight: 600;
+  color: white;
+  border-radius: 100px;
+}
+
+/*Login Button in the navigation bar (selected)*/
+.nacbar-default .navbar-nav li a:checked{
+  background-color: #FF0000;
+  color: white;
+}
+
+/*Login Button in the navigation bar (hovered)*/
+.navbar-default .navbar-nav li a:hover{
+  background-color: #FF0000;
+  color: white;
+}
+
+/*Picuter background*/
+#home{
+  background: url("Water2.jpg") no-repeat center center fixed;
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  background-size: cover;
+}
+
+/*Text With name*/
+.landing-text{
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/*text with name (h1)*/
+.landing-text h1 {
+  font-family: sans-serif, helvetica;
+  font-size: 500%;
+  font-weight: 500;
+  color: black;
+}
+
+/*text with name (h3: Animation)*/
+.landing-text h3{
+  font-weight: 500;
+  width: 46%;
+  padding-right: 0;
+  overflow: hidden;
+  border-right: .10em solid black;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation:
+    typing 1.5s steps(40, end),
+    blink-caret .5s step-end infinite;
+}
+@keyframes typing {
+  from{
+    width: 0;
+  }to{
+    width: 46%;
+  }
+}
+@keyframes blink-caret {
+  from, to{
+    border-color: transparent
+  }
+  50% { border-color: black}
+}
+
+/*text with name (sign up button)*/
+.landing-text a{
+  font-weight: 600;
+  background-color: #fff;
+  border-radius: 100px;
+  border: none;
+  color: black;
+}
+
+footer{
+  width: 100%;
+  background-color:#efefef;
+  padding: 5% 5% 10% 5%;
+  color: #4c4c4c;
+}
+
+footer h4{
+  line-height: 1.5;
+}
+
+footer img{
+  width: 100%;
+}

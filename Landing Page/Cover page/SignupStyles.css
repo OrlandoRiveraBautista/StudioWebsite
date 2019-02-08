@@ -1,0 +1,103 @@
+body{
+  font-family: Roboto, helvetica;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+.signupBox{
+  width: 700px;
+  height: 700px;
+  background-color: white;
+  color: black;
+  top: 50%;
+  left: 50%;
+  bottom: 50%;
+  right: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 35px;
+  text-align: center;
+  padding: 0;
+}
+
+.signupBox h1{
+  font-size: 40px;
+  font-weight: 700;
+  font-family: sans-serif, helvetica;
+  margin-bottom: 0;
+  padding: 0;
+}
+.signupBox input{
+  width: 77%;
+}
+
+/*The placeholder text for the information*/
+.signupBox input[type="text"]{
+  border: none;
+  border-bottom: .1px solid #6a6a6a;
+  background: transparent;
+  outline: none;
+  height: 29.5px;
+  font-size: 26px;
+  font-weight: lighter;
+  text-align: center;
+  letter-spacing: 1.04px;
+  margin-top: 70px;
+}
+
+.signupBox input[type="password"]{
+  border: none;
+  border-bottom: .1px solid #6a6a6a;
+  background: transparent;
+  outline: none;
+  height: 29.5px;
+  font-size: 26px;
+  font-weight: lighter;
+  text-align: center;
+  letter-spacing: 1.04px;
+  margin-top: 70px;
+  width: 65%;
+}
+
+#email{
+  width: 65%;
+}
+
+.Id{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding-left: 70px;
+  padding-top: 0;
+}
+
+.signupBox input[type="submit"]{
+  border: none;
+  outline: none;
+  height: 71px;
+  width: 390px;
+  border-radius: 100px;
+  font-size: 26px;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  color: white;
+  background: #ff0000;
+  margin-top: 50px;
+  margin-bottom: 15px;
+}
+
+.signupBox input[type="submit"]:hover{
+  overflow: visible;
+  height: 81px;
+  width: 400px;
+  cursor: pointer;
+  background: #FF0000;
+}
+
+  .signupBox a{
+    text-decoration: none;
+    font-size: 26px;
+    letter-spacing: 1px;
+    color: #0500ff;
+  }

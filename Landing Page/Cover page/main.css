@@ -1,0 +1,97 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-image:url("Bread.jpg");
+  font-family: Roboto, helvetica;
+}
+
+/*for the box with the login attributes*/
+.logInBox{
+  width: 505px;
+  height: 505px;
+  background-color: white;
+  color: black;
+  top: 50%;
+  left: 50%;
+  right: 50%;
+  bottom: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 30px;
+  text-align: center;
+}
+
+/*The Tittle of Login*/
+/*h1{
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+}*/
+
+/*The line under the user information*/
+.logInBox input{
+  width: 77%;
+}
+
+/*The placeholder text for the information*/
+.logInBox input[type="text"]{
+  border: none;
+  border-bottom: .1px solid #6a6a6a;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  font-size: 26px;
+  font-weight: lighter;
+  text-align: center;
+  letter-spacing: 1.04px;
+  margin-top: 85px;
+}
+
+.logInBox input[type="password"]{
+  border: none;
+  border-bottom: .1px solid #6a6a6a;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  font-size: 26px;
+  font-weight: lighter;
+  text-align: center;
+  letter-spacing: 1.04px;
+  margin-top: 80px;
+}
+
+/*The login button*/
+.logInBox input[type="submit"]{
+  border: none;
+  outline: none;
+  height: 71px;
+  width: 390px;
+  border-radius: 100px;
+  font-size: 26px;
+  font-weight: lighter;
+  letter-spacing: 1.04px;
+  color: white;
+  background: #FF0000;
+  margin-top: 107px;
+  margin-bottom: 15px;
+}
+
+/*The action the login button takes when being hovered over*/
+.logInBox input[type="submit"]:hover{
+  overflow: visible;
+  height: 81px;
+  width: 400px;
+  cursor: pointer;
+  background: #FF0000;
+}
+
+/*The link to sign up*/
+.logInBox a{
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 26px;
+  letter-spacing: 1.04px;
+  color: #0500FF;
+}
