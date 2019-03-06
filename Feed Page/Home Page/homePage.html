@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Your Feed Page</title>
+    <link rel="stylesheet" href="homePageStyles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+  </head>
+  <body>
+    <!--Navigation bar-->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fuild">
+      <div class="navbar-header">
+        <ul class="nav navbar-nav navbar-right">
+          <!--Items for Navigation bar-->
+            <!--Search bar-->
+          <div class="search-contain">
+              <input type="text" id="search" placeholder="Search">
+          </div>
+            <!--Buttons To Locations on NavBar-->
+          <img id="Shopping" src="shoppingcart.svg" alt="Shopping">
+          <img id="Home" src="homeicon.svg" alt="Home">
+          <img id="Notifications" src="notifications.svg" alt="Activities">
+          <button type="button" id="profile" onclick="document.body.classList.toggle('expanded')"><img id="Profile" src="man.svg" alt="Profile"></button>
+          <p>Orlando</p>
+            <div class="menu">
+  <svg class="shadow" width="375" height="322" viewBox="0 0 375 322">
+    <defs>
+      <filter
+              id="blur"
+              x="-0.053211679"
+              width="1.1064234"
+              y="-0.068773585"
+              height="1.1375472">
+        <feGaussianBlur
+                        inkscape:collect="always"
+                        stdDeviation="6.075"
+                        id="feGaussianBlur1076" />
+      </filter>
+    </defs>
+    <g transform="translate(0,120)">
+      <path
+            style="opacity:0.14;fill:#0e232e;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#blur)"
+            d="M 187.5 59.5 L 176.5 70.5 L 61.107422 70.5 C 55.231364 70.5 50.5 75.229411 50.5 81.105469 L 50.5 260.89258 C 50.5 266.76864 55.231364 271.5 61.107422 271.5 L 187.5 271.5 L 313.89453 271.5 C 319.77059 271.5 324.5 266.76864 324.5 260.89258 L 324.5 81.105469 C 324.5 75.229411 319.77059 70.5 313.89453 70.5 L 198.5 70.5 L 187.5 59.5 z "
+            transform="translate(0,-120)"
+            id="path967" />
+    </g>
+  </svg>
+  <svg class="container" width="275" height="222" viewBox="0 0 275 222">
+    <g transform="translate(0,20)">
+      <path class="border1" fill="transparent" stroke-width="1.5" d="m 137.5,201.5003 h -126.393699 c -5.8760576,0 -10.606602,-4.73054 -10.606602,-10.6066 v -179.787399 c 0,-5.8760576 4.7305444,-10.606602 10.606602,-10.606602 h 115.393699 l 11,-10.999699"/>
+      <path class="border2" fill="transparent" stroke-width="1.5" d="m 137.5,-10.5 11,10.999699 h 115.3937 c 5.87606,0 10.6066,4.7305444 10.6066,10.606602 v 179.787399 c 0,5.87606 -4.73054,10.6066 -10.6066,10.6066 h -126.3937"/>
+    </g>
+  </svg>
+        </ul>
+        <!--Buttons to open the side bar-->
+        <div id="SideBar">
+
+      <table>
+        <tr>
+          <li id = "genreActive">
+            <!--Genre button-->
+          <a onclick="genreButtonActions()" href="#" id="Genre" >Genre</a></li>
+            <script type="text/javascript">
+            function genreButtonActions(){
+              redBarG();
+              openSideBarG();
+              openGenreSideBar();
+            }
+              function openSideBarG(){
+                var r = document.getElementById("sideBar");
+                var x = document.getElementById("genreSideBar");
+                var i = document.getElementById("followingSideBar");
+                i.style.display = "none";
+                if (r.style.opacity == "1" && i.style.display == "block"){
+                  i.style.display = "none";
+                }if (r.style.opacity == "1" && i.style.display == "none" && x.style.display == "block"){
+                  r.style.opacity = "0";
+                }else {
+                  r.style.opacity = "1";
+                }
+              }
+              function openGenreSideBar(){
+                var rr = document.getElementById("genreSideBar");
+                if(rr.style.display == "block"){
+                  rr.style.display = "none";
+                }else{
+                  rr.style.display = "block";
+                }
+              }
+              function redBarG(){
+                var i = document.getElementById("genreActive");
+                var ii= document.getElementById("Genre");
+                var x = document.getElementById("followingActive");
+                var xx = document.getElementById("Following");
+                if (i.style.background == "red"){
+                  i.style.background = "none";
+                  ii.style.color = "rgba(0, 0, 0, 0.5)";
+                }else{
+                  x.style.background = "none";
+                  xx.style.color = "rgba(0, 0, 0, 0.5)";
+                  i.style.background = "red";
+                  ii.style.color = "black";
+                }
+              }
+            </script>
+        </tr>
+        <tr>
+          <!--Following button-->
+          <li id="followingActive">
+            <a onclick="followingButtonActions()" href="#" id="Following">Following</a></li>
+              <script type="text/javascript">
+              function followingButtonActions(){
+                redBarF();
+                openSideBarF();
+                openFollowingSideBar();
+              }
+              function redBarF(){
+            var x = document.getElementById("followingActive");
+            var xx = document.getElementById("Following");
+            var i = document.getElementById("genreActive");
+            var ii = document.getElementById("Genre");
+            if (x.style.background == "red"){
+              x.style.background = "none";
+              xx.style.color = "rgba(0, 0, 0, 0.5)";
+            }else{
+              i.style.background = "none";
+              ii.style.color = "rgba(0, 0, 0, 0.5)";
+              x.style.background = "red";
+              xx.style.color = "black";
+            }
+          }
+              function openSideBarF(){
+                var e = document.getElementById("sideBar");
+                var x = document.getElementById("followingSideBar");
+                var i = document.getElementById("genreSideBar");
+                i.style.display = "none";
+                if (e.style.opacity == "1" && i.style.display == "block"){
+                  i.style.display = "none";
+                }if (e.style.opacity == "1" && i.style.display == "none" && x.style.display == "block"){
+                  e.style.opacity = "0";
+                }else{
+                e.style.opacity = "1";
+                }
+              }
+              function openFollowingSideBar(){
+                var rr = document.getElementById("followingSideBar");
+                if(rr.style.display == "block"){
+                  rr.style.display = "none";
+                }else{
+                  rr.style.display = "block";
+                }
+              }
+              </script>
+        </tr>
+      </table>
+
+        </div>
+      </div>
+    </div>
+
+  </nav>
+  <!--Elements for the Posts-->
+  <div class="Feed">
+    <div id="sideBar">
+      <div id="genreSideBar">
+        <ul id="genreSideBarUl">
+          <li><a href="#">Rock</a></li>
+          <li><a href="#">Hip-Hop</a></li>
+          <li><a href="#">Pop</a></li>
+          <li><a href="#">Rap</a></li>
+          <li><a href="#">R&B</a></li>
+          <li><a href="#">Country</a></li>
+          <li><a href="#">Christian</a></li>
+          <li><a href="#">Jazz</a></li>
+          <li><a href="#">Latin</a></li>
+          <li><a href="#">Dance/Electronic</a></li>
+          <li><a href="#">Chill</a></li>
+        </ul>
+      </div>
+      <div id="followingSideBar">
+        <ul id="followingSideBarUl">
+          <li><a href="#">Roco</a></li>
+          <li><a href="#">Magnet</a></li>
+          <li><a href="#">Nori</a></li>
+          <li><a href="#">PiñaColada</a></li>
+          <li><a href="#">RaveOn</a></li>
+          <li><a href="#">Ty</a></li>
+          <li><a href="#">Christian</a></li>
+          <li><a href="#">OptimusPrime</a></li>
+          <li><a href="#">Latin</a></li>
+          <li><a href="#">Dance/Electronic</a></li>
+          <li><a href="#">Chill</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="Post">
+      <form>
+        <!--Post Image for the song posted-->
+        <div id="shuffle">
+          <button type="button" id="shufflePlay"><img id="shufflePlayImg" src="play-button.svg" alt="playbutton"></button>
+          <img id="postpic" src="Album-Cover.jpg" alt="Album"/>
+        </div>
+        </a>
+        <ul>
+          <p id="username"> User's Name</p>
+          <p id="postname">Album/Post Name</p>
+          <p id="timePosted">March 04, 2019</p>
+        </ul>
+        <div class="songList">
+          <table>
+            <tr>
+              <td><button type="button" id="ListSongPlay"><img src="play-button.svg" alt="playbutton"></button></td>
+              <td><p>The Life of Pachanga</p></td>
+              <td><button type="button" id="Like"><img src="google_heart_button.svg" alt="likebutton" id="Likebutton"></button></td>
+              <td><button type="button" id="shareButton"><img src="share-arrow.svg" alt="shareButton" id="shareButtonImg"></button></td>
+              <td><button type="button" id="BuySong"><img id="BuySongImg" src="addshoppingcart.svg" alt="Shopping"></button></td>
+              <td><p id=songTime>--:--</p></td>
+            </tr>
+            <tr>
+              <td><button type="button" id="ListSongPlay"><img src="play-button.svg" alt="playbutton"></button></td>
+              <td><p>Pineapple Action</p></td>
+              <td><button type="button" id="Like"><img src="google_heart_button.svg" alt="likebutton" id="Likebutton"></button></td>
+              <td><button type="button" id="shareButton"><img src="share-arrow.svg" alt="shareButton" id="shareButtonImg"></button></td>
+              <td><button type="button" id="BuySong"><img id="BuySongImg" src="addshoppingcart.svg" alt="Shopping"></button></td>
+              <td><p id=songTime>--:--</p></td>
+            </tr>
+            <tr>
+              <td><button type="button" id="ListSongPlay"><img src="play-button.svg" alt="playbutton"></button></td>
+              <td><p>High Life</p></td>
+              <td><button type="button" id="Like"><img src="google_heart_button.svg" alt="likebutton" id="Likebutton"></button></td>
+              <td><button type="button" id="shareButton"><img src="share-arrow.svg" alt="shareButton" id="shareButtonImg"></button></td>
+              <td><button type="button" id="BuySong"><img id="BuySongImg" src="addshoppingcart.svg" alt="Shopping"></button></td>
+              <td><p id=songTime>--:--</p></td>
+            </tr>
+          </table>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+<!--Music Control Elements-->
+<div class="Controls">
+  <div class="MusicControls">
+    <!--Current Song's picture-->
+    <img src="Album-Cover.jpg" alt="Album test">
+    <!--Last Song Button--> <!--Make A "History" for the songs played so that when they click back it goes to the last song played-->
+    <button type="button" name="PreviousSong"><img src="next-page.svg" alt="previous song" /></button>
+    <!--Play Song Button-->
+    <button onclick="hide()" type="button" id="Play"><img src="pause-round-button.svg" alt="playbutton"></button>
+    <!--Next Song Button-->
+    <button type="button" name="NextSong"><img src="next-page.svg" alt="nextsong"></button>
+    <!--Seek bar-->
+    <div id="seek-bar">
+      <span id="current-time">--:--</span>
+      <span id="total-time">--:--</span>
+      <audio class+"fc-media" id="fill">
+        <source src="Sicko-Mode-Sample.mp3" type="audio/mpeg"/>
+      </audio>
+      <div id="handle"></div>
+    </div>
+  </div>
+</div>
+
+  <div class="Social">
+    <div class="Comments">
+      <div id="commentDivision">
+        <input id= "commentSection" type="text" name="CommentSection" placeholder="Add a Comment...">
+      </div>
+    </div>
+
+  </div>
+
+  </body>
+</html>

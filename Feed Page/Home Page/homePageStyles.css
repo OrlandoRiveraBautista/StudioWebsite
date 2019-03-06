@@ -1,0 +1,712 @@
+body, html{
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9f9;
+}
+
+.navbar{
+  background-color: white;
+  height: 100px;
+  align-self: center;
+  padding: 1% 0;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+  border-radius: 0 0 30px 30px;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.25);
+}
+
+.navbar-default .navbar-nav img{
+  position: absolute;
+  left: 86.53%;
+  right: 9.58%;
+  top: 2%;
+  width: 56px;
+  height: 45px;
+  border: none;
+  text-decoration: none;
+}
+#Shopping{
+  transform: scale(1.1);
+  top: 2.5%;
+}
+.navbar-default .navbar-nav img[id="Home"]{
+  left: 80.28%;
+  right: 15.39%;
+  top: 1.5%;
+  width: 64px;
+  height: 55px;
+  position: absolute;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  transform: scale(1.1);
+}
+
+.navbar-default .navbar-nav img[id="Notifications"]{
+  left: 74.03%;
+  right: 21.67%;
+  top: 2.5%;
+  width: 65px;
+  height: 43px;
+  position: absolute;;
+  border: none;
+  text-decoration: none;
+  transform: scale(1.3);
+}
+
+.navbar-default .navbar-nav #Profile{
+  left: 93.47%;
+  right: 1.39%;
+  top: .47%;
+  width: 74px;
+  height: 74px;
+  position: absolute;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transform: translate(-93.47%);
+}
+.navbar-default .navbar-nav #profile{
+  left: 93.47%;
+  right: 1.39%;
+  top: .47%;
+  width: 74px;
+  height: 74px;
+  position: absolute;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 100px;
+  background: transparent;
+}
+.places {
+  color:  #898596;
+  position: absolute;
+}
+.menu {
+  border-radius: 8px;
+  height: 222px;
+  margin-top: 80px;
+  left: 1200px;
+  position: absolute;
+  width: 20px;
+}
+.container {
+  position: absolute;
+}
+.border1 {
+  fill: #fff;
+  fill-opacity: 0;
+  stroke: #44454a;
+  stroke-dasharray: 480 480;
+  stroke-dashoffset: -480px;
+  transition: stroke 400ms cubic-bezier(0.4, 0.0, 0.2, 1),
+    stroke-dasharray 400ms cubic-bezier(0.4, 0.0, 0.2, 1),
+    stroke-dashoffset 400ms cubic-bezier(0.4, 0.0, 0.2, 1),
+    fill-opacity 400ms 40ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+.border2 {
+  fill: #fff;
+  fill-opacity: 0;
+  stroke: #44454a;
+  stroke-dasharray: 0 480;
+  stroke-dashoffset: 0;
+  transition: stroke 400ms cubic-bezier(0.4, 0.0, 0.2, 1),
+    stroke-dasharray 400ms cubic-bezier(0.4, 0.0, 0.2, 1),
+    stroke-dashoffset 400ms cubic-bezier(0.4, 0.0, 0.2, 1),
+    fill-opacity 400ms 40ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+.shadow {
+  left: -56px;
+  opacity: 0;
+  position: absolute;
+  top: -46px;
+  transition: opacity 400ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+.contents {
+  left: 20px;
+  opacity: 0;
+  position: relative;
+  top: 48px;
+  transition: opacity 400ms cubic-bezier(0.4, 0.0, 0.2, 1);
+  width: 234px;
+}
+.row {
+  align-items: center;
+  border-bottom: 1px solid #cdd0de;
+  cursor: pointer;
+  display: flex;
+  height: 46px;
+  padding: 0 5px;
+  user-select: none;
+  -moz-user-select: none;
+}
+.row:hover {
+  background: #f8f8f8;
+}
+.row:active {
+  background: #f5f5f5;
+}
+.expanded .border1 {
+  fill-opacity: 1;
+  stroke: #c6c6cc;
+  stroke-dasharray: 480 480;
+  stroke-dashoffset: 0;
+}
+.expanded .border2 {
+  fill-opacity: 1;
+  stroke: #c6c6cc;
+  stroke-dasharray: 480 480;
+  stroke-dashoffset: 0;
+}
+.expanded .shadow {
+  opacity: 1;
+}
+.expanded .button {
+  transform: rotate(0);
+}
+.expanded .contents {
+  opacity: 1;
+  transition: opacity 400ms 100ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+
+.navbar-default .navbar-nav p{
+  left: 93.47%;
+  right: 1.39%;
+  top: 8%;
+  width: 74px;
+  text-align: center;
+  position: absolute;;
+  border: none;
+  font-weight: 700;
+  font-size: 19px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.navbar-default .navbar-nav input{
+  position: absolute;
+  left: 1.88%;
+  top: 2%;
+  background: transparent;
+  width: 283px;
+  height: 40px;
+  border-radius: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  outline: none;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  transition: box-shadow .4s ease-in-out, border .4s ease-in-out;;
+}
+.navbar-default .navbar-nav input:hover{
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.25);
+  border: none;
+  transition: border 1s ease-in-out;
+}
+.navbar-default .navbar-nav input:focus{
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.25);
+  border: none;
+}
+
+#SideBar {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  position: absolute;
+  font-weight: 300;
+  line-height: normal;
+  font-size: 24px;
+  letter-spacing: .03em;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  list-style-type: none;
+  display: block;
+  top: 50px;
+}
+#Genre{
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  width: 76.86px;
+  height: 22px;
+  left: 0;
+  transition: color 300ms ease;
+}
+#genreActive{
+  position: relative;
+  width: 80px;
+  height: 3px;
+  background: none;
+  left: 25px;
+  top: 20px;
+  transition: background 300ms ease;
+}
+#Following{
+  position: absolute;
+  width: 130px;
+  height: 22px;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.5);
+  left: 0;
+  transition: color 300ms ease;
+}
+#followingActive{
+  position: relative;
+  width: 130px;
+  height: 3px;
+  background: none;
+  left: 120px;
+  top: 17px;
+  transition: background 300ms ease;
+}
+
+#sideBar{
+  position: relative;
+  width: 244px;
+  height: 864px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  top: 30px;
+  background: white;
+  box-shadow: inset -1px 1px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 0 20px 20px 0;
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}
+
+/*The Start of the Genre Option for the SideBar*/
+#genreSideBar{
+  display: none;
+}
+#genreSideBarUl{
+  position: absolute;
+  border: none;
+  color: black;
+  list-style: none;
+  text-align: left;
+  left: -42px;
+}
+#genreSideBarUl li{
+  position: relative;
+  top: 10px;
+  height: 40px;
+  width: 220px;
+  border-radius: 0 20px 20px 0;
+  transition: background 100ms ease-in-out;
+}
+#genreSideBarUl a{
+  position: relative;
+  top: 5px;
+  left: 27px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  padding-right: 140px;
+  margin-right: -140px;
+  padding-left: 30px;
+  margin-left: -30px;
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
+  transition: color 100ms ease-in-out;
+}
+#genreSideBarUl li:hover{
+  background: #fb1414;
+}
+#genreSideBarUl a:hover{
+  color: white;
+}
+
+/*The Start of the Follwing options for the SideBar*/
+#followingSideBar{
+  display: none;
+}
+#followingSideBarUl{
+  position: absolute;
+  border: none;
+  color: black;
+  list-style: none;
+  text-align: left;
+  left: -42px;
+}
+#followingSideBarUl li{
+  position: relative;
+  top: 10px;
+  height: 40px;
+  width: 220px;
+  border-radius: 0 20px 20px 0;
+  transition: background 100ms ease-in-out;
+}
+#followingSideBarUl a{
+  position: relative;
+  top: 5px;
+  left: 27px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  padding-right: 140px;
+  margin-right: -140px;
+  padding-left: 30px;
+  margin-left: -30px;
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
+  transition: color 100ms ease-in-out;
+}
+#followingSideBarUl li:hover{
+  background: #fb1414;
+}
+#followingSideBarUl a:hover{
+  color: white;
+}
+
+.Post{
+  width: 686px;
+  height: 704px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: white;
+  color: black;
+  position: absolute;
+  left: 272px;
+  right: 482px;
+  bottom: 160px;
+  top: 160px;
+  display: table-cell;
+  vertical-align: middle;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.Feed .Post img[id="postpic"]{
+  width: 251px;
+  height: 251px;
+  position: absolute;
+  left: 0%;
+  right:60.8%;
+  top: 0%;
+  bottom: 62.64%;
+  border-radius: 7px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-image: url('AlbumCoverTest#3.jpg');
+}
+#shuffle{
+  width: 251px;
+  height: 251px;
+  position: absolute;
+  left: 3.55%;
+  right:60.8%;
+  top: 3.55%;
+  bottom: 62.64%;
+  border-radius: 7px;
+  background: #f0f0f0;
+  z-index: 20;
+  transition: opacity .5s ease-in-out, background .3s ease-in-out;
+}
+#shufflePlay{
+  width: 251px;
+  height: 251px;
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  opacity: 0;
+  transition: opacity .5s ease-in-out, background .3s ease-in-out;
+  outline: none;
+}
+#shufflePlayImg{
+  width: 43px;
+  height: 43px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  cursor: pointer;
+}
+#shuffle:hover, #shufflePlay:hover{
+  background-color: rgba(255, 255, 255, 0.1);
+  opacity: 1;
+}
+
+
+.Feed .Post p{
+  text-align: center;
+}
+#username{
+  position: absolute;
+  left: 45.17%;
+  right: 2.56%;
+  top: 8.24%;
+  bottom: 87.5%;
+  font-size: 30px;
+  font-weight: 400;
+}
+#postname{
+  position: absolute;
+  left: 45.17%;
+  right: 2.56%;
+  top: 17.33%;
+  bottom: 78.41%;
+  font-size: 20px;
+  font-weight: lighter;
+}
+#timePosted{
+  position: relative;
+  top: 650px;
+  left: 225px;
+  font-weight: lighter;
+}
+
+.Comments{
+  font-family: 'Poppins', sans-serif;
+  position: absolute;
+  width: 445px;
+  height: 490px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: white;
+  top: 266px;
+  right: 18px;
+  left: 977px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
+#commentSection{
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  width: 385px;
+  height: 40px;
+  top: 2px;
+  text-align: left;
+  border: none;
+  font-size: 18px;
+}
+#commentDivision{
+  height: 1px;
+  width: 385px;
+  background: black;
+  top: 440px;
+  left: 30px;
+  position: relative;
+}
+
+.MusicControls{
+  width: 445px;
+  height: 92px;
+  background: transparent;
+  position: absolute;
+  top: 160px;
+  right: 18px;
+  left: 977px;
+}
+
+.MusicControls img[alt="Album test"]{
+  position: relative;
+  width: 80px;
+  height: 80px;
+  top: 5px;
+  left: 5px;
+  border-radius: 7px;
+  background-image: url('AlbumCoverTest#3.jpg');
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.MusicControls button[name="PreviousSong"]{
+  width: 62px;
+  height: 62px;
+  position: absolute;
+  top: 10px;
+  right: 245px;
+  bottom: 16px;
+  left: 138px;
+  border: none;
+  background: transparent;
+  /*outline: none;*/
+  transform: rotate(180deg);
+}
+.MusicControls img[alt="previous song"]{
+  transform: translate(0, 5%);
+}
+
+.MusicControls button[id=Play]{
+  width: 63px;
+  height: 63px;
+  position: absolute;
+  left: 200px;
+  top: 10px;
+  border: none;
+  background: transparent;
+  /*outline: none;*/
+}
+.MusicControls img[alt="playbutton"]{
+  transform: translate(-1%, 3%);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 100px;
+}
+
+.MusicControls button[name="NextSong"]{
+  width: 62px;
+  height: 62px;
+  position: absolute;
+  left: 262px;
+  top: 10px;
+  border: none;
+  background: transparent
+}
+.MusicControls img[alt="nextsong"]{
+  transform: translate(0, 2%);
+}
+.MusicControls button{
+  border-radius: 50%;
+  cursor: pointer;
+}
+#seek-bar{
+  width: 250px;
+  height: 1px;
+  background-color: white;
+  border: .5px solid rgba(0, 0, 0, 1);
+  display: flex;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-left: 110px;
+  margin-right: 50px;
+  margin-top: -2.5px;
+}
+#fill{
+  height: 1px;
+  background-color: #fb1414;
+  border-radius: 20px;
+}
+#handle{
+  width: 1px;
+  height: 1px;
+  background-color: #fb1414;
+  border-radius: 50%;
+  margin-left: -3px;
+  margin-top: -1.5px;
+  transform: scale(2);
+  padding: 1px;
+  transition: all 150ms ease-in-out;
+}
+#handle:hover {
+  height: 6px;
+  width: 6px;
+  margin-left: -5px;
+  margin-top: -2.5px;
+}
+span{
+  cursor: default;
+  color: darken(white, 30%);
+  font-size: 10px;
+  position: absolute;;
+  bottom: 10px;
+}
+#current-time{
+    left: 20;
+  }
+#total-time{
+    right: 85px;
+  }
+
+.Feed .Post .songList{
+  position: absolute;
+  width: 650px;
+  height: 251px;
+  background-color: #ffffff;
+  left: 3.5%;
+  right: -23.87%;
+  top: 42.19%;
+  bottom: 18.61%;
+}
+.Feed .Post .songList table{
+  width: 650px;
+  height: 241px;
+  background-color: #ffffff;
+  left: 1%;
+  right: -23.87%;
+  top: 42.19%;
+  bottom: 18.61%;
+}
+.Feed .Post .songList p{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  position: relative;
+  font-weight: 600;
+  text-align: left;
+  font-size: 20px;
+  top: 45.25px;
+  bottom: 10.51px;
+  right: 15.01px;
+  transform: translate(0, -150%);
+}
+#ListSongPlay{
+  position: relative;
+  cursor: pointer;
+  height: 43px;
+  width: 43px;
+  left: 3%;
+  right: 81.45%;
+  top: 0;
+  bottom: 0;
+  padding: 1px;
+  border: none;
+  background: transparent;
+  transform: translate(0, -5%);
+}
+#Like{
+  display: block;
+  position: relative;
+  width: 35px;
+  height: 31px;
+  right: 15px;
+  top: -1.8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+#Likebutton{
+  width: 42px;
+  height: 30.78px;
+  padding: 0;
+  transform: translate(-27%, -7%);
+  transform: scale(1.2);
+}
+#shareButton{
+  display: block;
+  position: relative;
+  width: 35px;
+  height: 31px;
+  top: -1.8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+#shareButtonImg{
+  transform: scale(1.35);
+}
+#BuySong{
+  position: relative;
+  width: 37.34px;
+  height: 30px;
+  right: 0;
+  top: 1px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+#BuySongImg{
+  width: 37.34px;
+  height: 30px;
+  padding: 0;
+  transform: translate(-22%, -7%);
+  transform: scale(1.1);
+}
+#songTime{
+  position: relative;
+  border: none;
+  right: 0;
+}
