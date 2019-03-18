@@ -1,0 +1,33 @@
+h1 {
+    color: #fb1414;
+    text-align: center;
+    left: 40%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+    Roboto, Oxygen, Ubuntu, Cantarell, 
+    'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#searchBox {
+    position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+    Roboto, Oxygen, Ubuntu, Cantarell, 
+    'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    width: 283px;
+    height: 40px;
+    left: 40%;
+    top: 5%;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    border-radius: 100px;
+}
+
+#box-one {
+    background-color: gray;
+    border-radius: 15px;
+}
+
+#box-two {
+    background-color: yellow;
+    padding: 1%;
+}
