@@ -19,10 +19,10 @@
               <input type="text" id="search" placeholder="Search">
           </div>
             <!--Buttons To Locations on NavBar-->
-          <img id="Shopping" src="shoppingcart.svg" alt="Shopping">
-          <img id="Home" src="homeicon.svg" alt="Home">
-          <img id="Notifications" src="notifications.svg" alt="Activities">
-          <button type="button" id="profile" onclick="document.body.classList.toggle('expanded')"><img id="Profile" src="man.svg" alt="Profile"></button>
+          <button type="button" id="shoppingButton"><img id="Shopping" src="shoppingcart.svg" alt="Shopping"></button>
+          <button type="button" id="homeButton"><img id="Home" src="homeicon.svg" alt="Home"></button>
+          <button type="button" id="notificationsButton"><img id="Notifications" src="notifications.svg" alt="Activities"></button>
+          <button type="button" id="profile" href="C:\Users\orlan\Desktop\Website%Elements\Profile%Page\Profile\ProfilePage.html" onclick="document.body.classList.toggle('expanded')"><img id="Profile" src="man.svg" alt="Profile"></button>
           <p>Orlando</p>
             <div class="menu">
   <svg class="shadow" width="375" height="322" viewBox="0 0 375 322">
@@ -57,11 +57,10 @@
         <!--Buttons to open the side bar-->
         <div id="SideBar">
 
-      <table>
-        <tr>
+
+          <!--Genre button-->
           <li id = "genreActive">
-            <!--Genre button-->
-          <a onclick="genreButtonActions()" href="#" id="Genre" >Genre</a></li>
+          <a onclick="genreButtonActions()" href="#" id="Genre">Genre</a></li>
             <script type="text/javascript">
             function genreButtonActions(){
               redBarG();
@@ -73,12 +72,12 @@
                 var x = document.getElementById("genreSideBar");
                 var i = document.getElementById("followingSideBar");
                 i.style.display = "none";
-                if (r.style.opacity == "1" && i.style.display == "block"){
+                if (r.style.left == "0px" && i.style.display == "block"){
                   i.style.display = "none";
-                }if (r.style.opacity == "1" && i.style.display == "none" && x.style.display == "block"){
-                  r.style.opacity = "0";
+                }if (r.style.left == "0px" && i.style.display == "none" && x.style.display == "block"){
+                  r.style.left = "-246px";
                 }else {
-                  r.style.opacity = "1";
+                  r.style.left = "0px";
                 }
               }
               function openGenreSideBar(){
@@ -90,18 +89,19 @@
                 }
               }
               function redBarG(){
-                var i = document.getElementById("genreActive");
+                var genreRedBar = document.getElementById("genreActive");
                 var ii= document.getElementById("Genre");
                 var x = document.getElementById("followingActive");
                 var xx = document.getElementById("Following");
-                if (i.style.background == "red"){
-                  i.style.background = "none";
-                  ii.style.color = "rgba(0, 0, 0, 0.5)";
+                var r = document.getElementById("genreSideBar");
+                if(r.style.display == "block"){
+                  genreRedBar.style.background = "none";
+                  ii.style.color = "var(--lightsoftblack-color)";
                 }else{
                   x.style.background = "none";
-                  xx.style.color = "rgba(0, 0, 0, 0.5)";
-                  i.style.background = "red";
-                  ii.style.color = "black";
+                  xx.style.color = "var(--lightsoftblack-color)";
+                  genreRedBar.style.background = "#fb1414";
+                  ii.style.color = "var(--lightblack-color)";
                 }
               }
             </script>
@@ -121,14 +121,15 @@
             var xx = document.getElementById("Following");
             var i = document.getElementById("genreActive");
             var ii = document.getElementById("Genre");
-            if (x.style.background == "red"){
+            var rr = document.getElementById("followingSideBar")
+            if (rr.style.display == "block"){
               x.style.background = "none";
-              xx.style.color = "rgba(0, 0, 0, 0.5)";
+              xx.style.color = "var(--lightsoftblack-color)";
             }else{
               i.style.background = "none";
-              ii.style.color = "rgba(0, 0, 0, 0.5)";
-              x.style.background = "red";
-              xx.style.color = "black";
+              ii.style.color = "var(--lightsoftblack-color)";
+              x.style.background = "#fb1414";
+              xx.style.color = "var(--lightblack-color)";
             }
           }
               function openSideBarF(){
@@ -136,12 +137,12 @@
                 var x = document.getElementById("followingSideBar");
                 var i = document.getElementById("genreSideBar");
                 i.style.display = "none";
-                if (e.style.opacity == "1" && i.style.display == "block"){
+                if (e.style.left == "0px" && i.style.display == "block"){
                   i.style.display = "none";
-                }if (e.style.opacity == "1" && i.style.display == "none" && x.style.display == "block"){
-                  e.style.opacity = "0";
+                }if (e.style.left == "0px" && i.style.display == "none" && x.style.display == "block"){
+                  e.style.left = "-246px";
                 }else{
-                e.style.opacity = "1";
+                e.style.left = "0px";
                 }
               }
               function openFollowingSideBar(){
@@ -204,6 +205,7 @@
         </div>
         </a>
         <ul>
+          <img id="userImg" src="man.svg"></img>
           <p id="username"> User's Name</p>
           <p id="postname">Album/Post Name</p>
           <p id="timePosted">March 04, 2019</p>
@@ -213,25 +215,67 @@
             <tr>
               <td><button type="button" id="ListSongPlay"><img src="play-button.svg" alt="playbutton"></button></td>
               <td><p>The Life of Pachanga</p></td>
-              <td><button type="button" id="Like"><img src="google_heart_button.svg" alt="likebutton" id="Likebutton"></button></td>
-              <td><button type="button" id="shareButton"><img src="share-arrow.svg" alt="shareButton" id="shareButtonImg"></button></td>
+              <td><button onclick="heartButtonActions()" type="button" id="Like"><img src="google_heart_button.svg" alt="likebutton" id="Likebutton"><img src="Red_heart.svg" alt="likebutton" id="LikebuttonRed"></button></td>
+              <script type="text/javascript">
+                function heartButtonActions(){
+                  makeHeartRed("Likebutton", "LikebuttonRed");
+                }
+                function makeHeartRed(n, x){
+                  var heart = document.getElementById(n);
+                  var redHeart = document.getElementById(x);
+                  if(redHeart.style.display == "block"){
+                    redHeart.style.display = "none";
+                    redHeart.style.opacity = "0";
+                    heart.style.display = "block";
+                    heart.style.opacity = "1";
+                  } else{
+                    redHeart.style.display = "block";
+                    redHeart.style.opacity = "1";
+                    heart.style.display = "none";
+                    heart.style.opacity = "0";
+                  }
+                }
+
+                //try to figure out how to make the address of the song be part of the ID, making it unique ot that song.
+
+                //var Likebutton= ["heartbutton0", "heartbutton1", "heartbutton2"];
+                //function randomName(){
+                //  for (i=0, i>3, i++){
+                //    Likebutton[i];
+                //  }
+                //}
+              </script>
+              <td><button onclick="snackbarFunction()" type="button" id="shareButton"><img src="share-arrow.svg" alt="shareButton" id="shareButtonImg"></button></td>
               <td><button type="button" id="BuySong"><img id="BuySongImg" src="addshoppingcart.svg" alt="Shopping"></button></td>
               <td><p id=songTime>--:--</p></td>
             </tr>
             <tr>
               <td><button type="button" id="ListSongPlay"><img src="play-button.svg" alt="playbutton"></button></td>
               <td><p>Pineapple Action</p></td>
-              <td><button type="button" id="Like"><img src="google_heart_button.svg" alt="likebutton" id="Likebutton"></button></td>
-              <td><button type="button" id="shareButton"><img src="share-arrow.svg" alt="shareButton" id="shareButtonImg"></button></td>
-              <td><button type="button" id="BuySong"><img id="BuySongImg" src="addshoppingcart.svg" alt="Shopping"></button></td>
+              <!-- make sure You fix the problems with the name, perhaps make it so that it gives out random names.-->
+              <td><button type="button" onclick="heartButtonActions1()" id="Like"><img src="google_heart_button.svg" alt="likebutton" id="Likebutton1"><img src="Red_heart.svg" alt="likebutton" id="LikebuttonRed2"></button></td>
+              <script type="text/javascript">
+              function heartButtonActions1(){
+                makeHeartRed("Likebutton1", "LikebuttonRed2");
+              }
+
+              </script>
+              <td><button onclick="snackbarFunction()" type="button" id="shareButton"><img src="share-arrow.svg" alt="shareButton" id="shareButtonImg"></button></td>
+              <td><button type="button" id="BuySong"><img id="BuySongImg1" src="addshoppingcart.svg" alt="Shopping"></button></td>
               <td><p id=songTime>--:--</p></td>
             </tr>
             <tr>
               <td><button type="button" id="ListSongPlay"><img src="play-button.svg" alt="playbutton"></button></td>
               <td><p>High Life</p></td>
-              <td><button type="button" id="Like"><img src="google_heart_button.svg" alt="likebutton" id="Likebutton"></button></td>
-              <td><button type="button" id="shareButton"><img src="share-arrow.svg" alt="shareButton" id="shareButtonImg"></button></td>
-              <td><button type="button" id="BuySong"><img id="BuySongImg" src="addshoppingcart.svg" alt="Shopping"></button></td>
+              <td><button type="button" onclick="heartButtonActions2()" id="Like"><img src="google_heart_button.svg" alt="likebutton" id="Likebutton2"><img src="Red_heart.svg" alt="likebutton" id="LikebuttonRed3"></button></td>
+              <script type="text/javascript">
+              function heartButtonActions2(){
+                makeHeartRed("Likebutton2", "LikebuttonRed3");
+              }
+
+              </script>
+              <td><button onclick="snackbarFunction()" type="button" id="shareButton"><img src="share-arrow.svg" alt="shareButton" id="shareButtonImg"></button></td>
+              <td><button type="button" id="BuySong"><img id="BuySongImg2" src="addshoppingcart.svg" alt="Shopping"></button></td>
               <td><p id=songTime>--:--</p></td>
             </tr>
           </table>
@@ -243,35 +287,255 @@
   </div>
 <!--Music Control Elements-->
 <div class="Controls">
+  <audio autoplay class="fc-media" id="fill">
+    <source src="Sicko-Mode-Sample.mp3" type="audio/mpeg"/>
+  </audio>
   <div class="MusicControls">
     <!--Current Song's picture-->
     <img src="Album-Cover.jpg" alt="Album test">
     <!--Last Song Button--> <!--Make A "History" for the songs played so that when they click back it goes to the last song played-->
-    <button type="button" name="PreviousSong"><img src="next-page.svg" alt="previous song" /></button>
+    <button onclick="backActions()" type="button" name="PreviousSong"><img src="next-page.svg" alt="previous song" /></button>
+    <script type="text/javascript">
+    function backActions(){
+      back();
+      updateTime();
+    }
+    function back(){
+      var x = document.getElementById("playImg");
+      currentSong--;
+      if(currentSong < 0){
+        currentSong = 2;
+      }
+      playSong();
+      x.src = "pause-round-button.svg";
+    }
+    </script>
     <!--Play Song Button-->
-    <button onclick="hide()" type="button" id="Play"><img src="pause-round-button.svg" alt="playbutton"></button>
+    <button onclick="playButtonActions()" type="button" id="Play"><img id="playImg" src="play-button.svg" alt="playbutton"></button>
+    <script type="text/javascript">
+    function playButtonActions(){
+      playpause();
+      updateTime();
+    }
+    function updateTime(){
+      check();
+      updateTimeStamp();
+      totalTimeStamp();
+    }
+    function playpause(){
+      var x = document.getElementById("playImg");
+      if(song.paused){
+        song.play();
+        x.src = "pause-round-button.svg";
+      }else{
+        song.pause();
+        x.src = "play-button.svg";
+      }
+    }
+    </script>
     <!--Next Song Button-->
-    <button type="button" name="NextSong"><img src="next-page.svg" alt="nextsong"></button>
+    <button onclick="nextActions()" type="button" name="NextSong"><img src="next-page.svg" alt="nextsong"></button>
+    <script type="text/javascript">
+    function nextActions(){
+      next();
+      updateTime();
+    }
+      function next(){
+        var x = document.getElementById("playImg");
+        currentSong++;
+        if(currentSong > 2){
+          currentSong = 0;
+        }
+        playSong();
+        x.src = "pause-round-button.svg";
+      }
+    </script>
     <!--Seek bar-->
+    <div class="seekbar">
     <div id="seek-bar">
+      <!--<div id="seek-bar"></div>-->
+      <script type="text/javascript">
+        var bar = document.getElementById("seek-bar");
+        bar.addEventListener("click", clickedBar, false);
+        function clickedBar(e){
+          if(!song.ended){
+            var mouseX = e.pageX - bar.offsetLeft * 9.867;
+            var newTime = mouseX * song.duration / 250;
+            song.currentTime = newTime;
+            fillBar.style.transform = mouseX / 10 + "px";
+          }
+        }
+      </script>
+      <span id="songTitle">Stuff</span>
       <span id="current-time">--:--</span>
+      <script type="text/javascript">
+      function updateTimeStamp(){
+      song.addEventListener("timeupdate", function(){
+        var c = Math.round(song.currentTime);
+
+        var hours   = Math.floor(c / 3600);
+        var minutes = Math.floor((c - (hours * 3600)) / 60);
+        var seconds = c - (hours * 3600) - (minutes * 60);
+
+        if (minutes < 10) {minutes = minutes;}
+        if (seconds < 10) {seconds = "0"+seconds;}
+        document.getElementById("current-time").innerHTML = minutes + ":" + seconds;
+      });}
+      </script>
       <span id="total-time">--:--</span>
-      <audio class+"fc-media" id="fill">
-        <source src="Sicko-Mode-Sample.mp3" type="audio/mpeg"/>
-      </audio>
+      <script type="text/javascript">
+      function totalTimeStamp(){
+        song.addEventListener("timeupdate", function(){
+        var total = Math.round(song.duration);
+
+        var hours   = Math.floor(total / 3600);
+        var minutes = Math.floor((total - (hours * 3600)) / 60);
+        var seconds = total - (hours * 3600) - (minutes * 60);
+
+        if (minutes < 10) {minutes = minutes;}
+        if (seconds < 10) {seconds = "0"+seconds;}
+        document.getElementById("total-time").innerHTML = minutes + ":" + seconds;
+      });}
+      </script>
+      <div id="progress"></div>
+      <script type="text/javascript">
+      function check(){
+      song.addEventListener("timeupdate", function(){
+        var position = song.currentTime / song.duration;
+
+        fillBar.style.width= position * 100 + '%';
+      });}
+      </script>
       <div id="handle"></div>
     </div>
   </div>
 </div>
 
+  <!--script for music player-->
+  <script type="text/javascript">
+  var songs = ["Sicko-Mode-Sample.mp3", "So Cool.mp3"];
+
+  var songTitle = document.getElementById("songTitle");
+  var fillBar = document.getElementById("progress");
+  var bar = document.getElementById("seek-bar");
+
+  var song = new Audio();
+  var currentSong = 0;
+
+  window.onload = playSong(), playNextAuto();
+
+  function playSong(){
+    song.src = songs[currentSong];
+
+    songTitle.textContent = songs[currentSong];
+
+    song.play();
+  }
+
+  function playNextAuto(){
+  song.addEventListener("ended", function(){
+    next();
+  });}
+
+
+  </script>
+</div>
+
   <div class="Social">
     <div class="Comments">
       <div id="commentDivision">
-        <input id= "commentSection" type="text" name="CommentSection" placeholder="Add a Comment...">
+        <input id= "commentSection" type="text" name="CommentSection" placeholder="Add a Comment..." onkeydown="displayComment()" onkeypress="makeCommentSpaceBigger()">
+        <script type="text/javascript">
+          function displayComment(){
+            var displayC = document.getElementById("commentSection");
+          }
+          //figure out how to make the height of the comment space larger as characters reach the 100% of the box.
+          //function makeCommentSpaceBigger(){
+          //  this.style.length = ((this.value.length + 1) * 8) + "px";
+          //}
+        </script>
       </div>
     </div>
 
   </div>
 
+  <!-- Making the Notification system -->
+  <div id="snackbar">Some Stuff</div>
+  <script type="text/javascript">
+  function snackbarFunction(){
+      var x = document.getElementById("snackbar");
+      x.className = "show";
+      setTimeout(function(){x.className = x.className.replace("show", "");},3000);
+  }
+  </script>
+
+  <div class="darkMode">
+    <button onclick="darklight" type="button" id="changeTheme" name="changeTheme">Dark Mode</button>
+    <script type="text/javascript">
+      let root = document.documentElement;
+      let themeButton = document.getElementById("changeTheme");
+      let darkNotifications = document.getElementById("snackbar");
+      //Dark Home Icon
+      let darkHomeIcon = document.getElementById("Home");
+      //Dark Notification Icon
+      let darkNotificationIcon = document.getElementById("Notifications");
+      //Dark Shopping Cart Icon
+      let darkShoppingCart = document.getElementById("Shopping");
+      //Dark Heart Button.
+      let darkHeartButton = document.getElementById("Likebutton");
+      let darkHeartButton1 = document.getElementById("Likebutton1");
+      let darkHeartButton2 = document.getElementById("Likebutton2");
+      //Dark Add To Shopping Cart
+      let darkAddShoppingCart = document.getElementById("BuySongImg");
+      let darkAddShoppingCart1 = document.getElementById("BuySongImg1");
+      let darkAddShoppingCart2 = document.getElementById("BuySongImg2");
+
+      //Try to create a for loop for the hearts so that its only one function instead of 3
+      //for (var i=1; i<3; i++){
+      //}
+
+      themeButton.addEventListener("click", function(){
+        if (themeButton.innerHTML == "Light Mode"){
+          root.style.setProperty("--light-color", "#ffffff");
+          root.style.setProperty("--lightborder-color", "rgba(0,0,0,0.3)");
+          root.style.setProperty("--lightshadow-color", "rgba(0, 0, 0, 0.25)");
+          root.style.setProperty("--lightblack-color", "black");
+          root.style.setProperty("--lightsoftblack-color", "rgba(0, 0, 0, 0.5)");
+          darkNotifications.style.color = "#d9d9d9";
+          darkNotifications.style.background = "#404040";
+          //light home icon change
+          darkHomeIcon.src = "homeicon.svg";
+          //Light Heart change
+          darkHeartButton.src = "google_heart_button.svg";
+          darkHeartButton1.src = "google_heart_button.svg";
+          darkHeartButton2.src = "google_heart_button.svg";
+          //light add shopping change
+          darkAddShoppingCart.src = "addShoppingcart.svg";
+          darkAddShoppingCart1.src = "addShoppingcart.svg";
+          darkAddShoppingCart2.src = "addShoppingcart.svg";
+          themeButton.innerHTML = "Dark Mode";
+        }else{
+          root.style.setProperty("--light-color", "#333333");
+          root.style.setProperty("--lightborder-color", "#a6a6a6");
+          root.style.setProperty("--lightshadow-color", "#a6a6a6");
+          root.style.setProperty("--lightblack-color", "#ffffff");
+          root.style.setProperty("--lightsoftblack-color", "#808080");
+          darkNotifications.style.color = "#333333";
+          darkNotifications.style.background = "#ffffff";
+          //dark home icon change
+          darkHomeIcon.src = "homeicon(dark).svg";
+          //Dark Heart Change
+          darkHeartButton.src = "google_heart_button_(dark).svg";
+          darkHeartButton1.src = "google_heart_button_(dark).svg";
+          darkHeartButton2.src = "google_heart_button_(dark).svg";
+          //dark add shopping change
+          darkAddShoppingCart.src = "addShoppingcart(dark).svg";
+          darkAddShoppingCart1.src = "addShoppingcart(dark).svg";
+          darkAddShoppingCart2.src = "addShoppingcart(dark).svg";
+          themeButton.innerHTML = "Light Mode";
+        }
+      });
+    </script>
+  </div>
   </body>
 </html>
